@@ -3,118 +3,138 @@
 @tailwind components;
 @tailwind utilities;
 
-.sidebar {
-  @apply flex flex-column mt-0 h-screen w-16 mx-0 fixed top-0 left-0 items-start justify-center shadow-lg;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.sidebar-icon {
-  @apply bg-gray-800 h-12 w-12 rounded-full flex items-center justify-center mt-2 mb-2 text-black shadow-lg mx-auto;
+::-webkit-scrollbar {
+  background-color: transparent;
+  box-shadow: 0px 0px 10px #131313aa;
 }
 
-.sidebar-hr {
-  @apply border rounded-full border-gray-900 mx-3;
+::-webkit-scrollbar-thumb {
+  background-color: #51e1ac;
+  border-radius: 12px;
 }
 
-.top-navigation {
-  @apply bg-gray-800 bg-opacity-90 flex-row w-full h-16 py-4 m-0 flex items-center justify-evenly shadow-lg;
-}
+@layer components {
+  .sidebar {
+    @apply flex flex-col mt-0 h-screen w-16 mx-0 fixed top-0 left-0 items-start justify-center shadow-lg;
+  }
 
-.title-hashtag {
-  @apply text-lg text-gray-400 ml-2 my-0 tracking-wider font-semibold;
-}
+  .sidebar-icon {
+    @apply bg-gray-800 cursor-pointer h-12 w-12 rounded-full flex items-center justify-center mt-2 mb-2 text-black shadow-lg mx-auto hover:shadow-sm hover:bg-channelBgDark transition duration-300 ease-in-out;
+  }
 
-.title-text {
-  @apply text-base text-accent text-opacity-75 mr-auto ml-2 my-0 tracking-wider font-semibold;
-}
+  .sidebar-hr {
+    @apply border rounded-full border-gray-900 mx-3;
+  }
 
-.search {
-  @apply w-1/5  bg-gray-900 shadow-xl flex items-center justify-start px-2 h-9 ml-0 mr-0 rounded-md;
-}
+  .top-navigation {
+    @apply bg-navbarDark bg-opacity-90 flex flex-row w-full h-16 m-0 items-center justify-evenly shadow-lg;
+  }
 
-.search-input {
-  @apply pl-1 w-full font-sans bg-transparent outline-none text-secondary text-lg rounded placeholder-gray-600;
-}
+  .title-hashtag {
+    @apply text-lg text-gray-400 ml-2 my-auto tracking-wider font-semibold;
+  }
 
-.content-container {
-  @apply bg-gray-800 m-0 p-2 h-full w-full flex flex-col overflow-hidden;
-}
+  .title-text {
+    @apply text-lg text-accent text-opacity-75 mr-auto ml-2 my-auto tracking-wider font-semibold transition duration-300 ease-in-out;
+  }
 
-.content-list {
-  @apply flex flex-col items-center h-full w-full mt-0 ml-0 mx-auto px-6 pb-12 overflow-y-scroll;
-}
+  .search {
+    @apply w-1/5 bg-contentDark shadow-xl flex items-center justify-start px-2 h-9 ml-0 mr-0 rounded-md transition duration-300 ease-in-out;
+  }
 
-.post {
-  @apply flex flex-row p-2 items-center justify-evenly mx-0 w-full my-2;
-}
+  .search-input {
+    @apply pl-1 w-full font-sans bg-transparent outline-none text-secondary text-lg rounded placeholder-gray-600;
+  }
 
-.post-content {
-  @apply flex flex-col justify-start ml-2 mr-auto w-4/5;
-}
+  .content-container {
+    @apply bg-contentDark m-0 h-full w-full flex flex-col overflow-hidden;
+  }
 
-.post-text {
-  @apply text-left text-lg text-secondary mr-auto whitespace-normal;
-}
+  .content-list {
+    @apply flex flex-col items-center h-full w-full mt-0 ml-0 mx-auto px-6 pb-12 overflow-y-scroll;
+  }
 
-.post-owner {
-  @apply text-left text-base font-semibold text-primary mr-2;
-}
+  .post {
+    @apply flex flex-row p-2 items-center justify-evenly mx-0 w-full my-2;
+  }
 
-.avatar-wrapper {
-  @apply flex flex-col items-center m-0 w-12 mb-auto;
-}
+  .post-content {
+    @apply flex flex-col justify-start ml-2 mr-auto w-4/5;
+  }
 
-.avatar {
-  @apply flex-none m-w-12 w-12 h-full rounded-full object-cover bg-gray-100 mb-auto mt-0 mx-0;
-}
+  .post-text {
+    @apply text-left text-lg text-secondary mr-auto whitespace-normal;
+  }
 
-.timestamp {
-  @apply text-left text-xs font-semibold text-gray-600;
-}
+  .post-owner {
+    @apply text-left cursor-pointer text-base font-semibold text-primary mr-2;
+  }
 
-.bottom-bar {
-  @apply fixed left-80 right-12 bottom-2 rounded-lg h-12 shadow-xl bg-gray-700 flex flex-row items-center justify-between px-2;
-}
+  .avatar-wrapper {
+    @apply flex flex-col items-center m-0 w-12 mb-auto;
+  }
 
-.bottom-bar-input {
-  @apply ml-0 mr-auto bg-transparent outline-none text-gray-400;
-}
+  .avatar {
+    @apply flex-none cursor-pointer w-12 h-full rounded-full object-cover bg-gray-100 mb-auto mt-0 mx-0 shadow-lg;
+  }
 
-.channel-bar {
-  @apply bg-gray-900 bg-opacity-90 w-80 h-auto border-l border-gray-800 m-0  ml-16 overflow-hidden;
-}
+  .timestamp {
+    @apply text-left text-xs font-semibold text-gray-600 ml-2;
+  }
 
-.channel-container {
-  @apply p-1 h-max flex flex-col items-center justify-start m-0;
-}
+  .bottom-bar {
+    @apply fixed left-80 right-12 bottom-2 rounded-lg h-12 shadow-lg bg-bottomBar flex flex-row items-center justify-between px-2;
+  }
 
-.channel-block {
-  @apply h-16 flex items-center justify-center m-0 p-0;
-}
+  .bottom-bar-input {
+    @apply ml-0 cursor-pointer mr-auto w-full bg-transparent outline-none text-gray-400 text-lg;
+  }
 
-.channel-block-test {
-  @apply text-lg text-gray-400 mr-auto ml-3 my-0 tracking-wider font-semibold;
-}
+  .channel-bar {
+    @apply bg-channelBgDark shadow w-80 h-auto border-l border-gray-800 m-0  ml-16 overflow-hidden;
+  }
 
-.dropdown {
-  @apply mx-0 mb-2 w-full px-4 py-2;
-}
+  .channel-container {
+    @apply p-1 flex flex-col items-center justify-start m-0;
+  }
 
-.dropdown-header {
-  @apply flex flex-row items-center justify-space-evenly mx-0;
-}
+  .channel-block {
+    @apply h-16 flex items-center justify-center m-0 p-0;
+  }
 
-.dropdown-header-text {
-  @apply text-sm text-accent text-opacity-80 font-bold;
-}
+  .channel-block-text {
+    @apply text-lg text-gray-400 mr-auto ml-3 my-auto tracking-wider font-semibold align-middle;
+  }
 
-.dropdown-selection {
-  @apply flex flex-row items-center justify-space-evenly ml-2 mt-2;
-}
+  .dropdown {
+    @apply mx-0 mb-0 w-full px-4 py-2;
+  }
 
-.dropdown-selected-badge {
-  @apply flex flex-row items-center bg-gray-600 bg-opacity-75 rounded-full w-auto pr-2 shadow-lg;
-}
+  .dropdown-header {
+    @apply flex flex-row items-center justify-evenly mx-0;
+  }
 
-.dropdown-selection-text {
-  @apply text-secondary text-lg font-semibold tracking-normal;
+  .dropdown-header-text {
+    @apply text-sm text-accent text-opacity-80 font-bold;
+  }
+
+  .dropdown-selection {
+    @apply flex flex-row cursor-pointer items-center justify-evenly mt-2 mr-auto ml-2;
+  }
+
+  .dropdown-selected-badge {
+    @apply flex flex-row items-center bg-gray-700 bg-opacity-90 rounded-full pl-1 pr-2 shadow-lg mr-auto;
+  }
+
+  .dropdown-selection-text {
+    @apply text-secondary cursor-pointer hover:text-accent text-lg font-semibold tracking-normal mr-auto transition duration-300 ease-in-out;
+  }
 }

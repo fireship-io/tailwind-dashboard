@@ -26,13 +26,13 @@
 
 - [ ] Add responsiveness for small screens
 
-- [x] Add better dummy data
-
-- [ ] Add some animations
-
 - [ ] Add a custom font
 
-- [ ] Customize/tweak neutrals
+- [x] Add better dummy data
+
+- [x] Add some animations
+
+- [x] Customize/tweak neutrals
 
 - [x] Break the component tree down
 

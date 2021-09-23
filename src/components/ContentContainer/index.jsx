@@ -90,7 +90,7 @@ const Post = ({ name, timestamp, text }) => {
 };
 
 const PlusIcon = () => (
-  <BsPlusCircleFill size='22' className='shadow-lg mx-2 text-gray-400' />
+  <BsPlusCircleFill size='22' className='shadow-lg mx-2 text-primary' />
 );
 
 export default ContentContainer;

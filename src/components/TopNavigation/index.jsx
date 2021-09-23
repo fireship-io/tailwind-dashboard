@@ -30,8 +30,28 @@ const Search = () => (
 
 const HashtagIcon = () => <FaHashtag size='20' className='title-hashtag' />;
 const Title = () => <h5 className='title-text'>tailwind-css</h5>;
-const BellIcon = () => <FaRegBell size='24' className='text-grayIcon ml-auto mr-4' />;
-const InboxIcon = () => <FaInbox size='24' className='text-grayIcon mx-4' />;
-const QuestionIcon = () => <FaQuestionCircle size='24' className='text-grayIcon mx-4' />;
-const UserCircle = () => <FaUserCircle size='24' className='text-grayIcon mx-4' />;
+const BellIcon = () => (
+  <FaRegBell
+    size='24'
+    className='cursor-pointer text-grayIcon hover:text-primary ml-auto mr-4 shadow-lg transition duration-300 ease-in-out'
+  />
+);
+const InboxIcon = () => (
+  <FaInbox
+    size='24'
+    className='cursor-pointer text-grayIcon hover:text-primary mx-4 shadow-lg transition duration-300 ease-in-out'
+  />
+);
+const QuestionIcon = () => (
+  <FaQuestionCircle
+    size='24'
+    className='cursor-pointer text-grayIcon hover:text-primary mx-4 shadow-lg transition duration-300 ease-in-out'
+  />
+);
+const UserCircle = () => (
+  <FaUserCircle
+    size='24'
+    className='cursor-pointer text-grayIcon hover:text-primary mx-4 shadow-lg transition duration-300 ease-in-out'
+  />
+);
 export default TopNavigation;
