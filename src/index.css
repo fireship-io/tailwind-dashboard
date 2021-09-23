@@ -1,8 +1,6 @@
 @import-normalize;
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
-
 *,
 *::before,
 *::after {
@@ -11,66 +9,94 @@
   padding: 0;
 }
 
-::-webkit-scrollbar {
-  background-color: transparent;
-  box-shadow: 0px 0px 10px #131313aa;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #51e1ac;
-  border-radius: 12px;
-}
-
 @layer components {
   .app {
-    @apply flex flex-row bg-gradient-to-r from-green-400 via-purple-500 to-pink-400 h-screen w-screen;
+    @apply flex flex-row
+    bg-gradient-to-r from-green-400 via-purple-500 to-pink-400 
+    h-screen w-screen;
   }
+
   .sidebar {
-    @apply flex flex-col items-start justify-center fixed top-0 left-0 h-screen w-16 m-0 shadow-lg;
+    @apply flex flex-col items-start justify-center 
+    fixed top-0 left-0 
+    h-screen w-16 m-0 shadow-lg;
   }
 
   .sidebar-icon {
-    @apply flex items-center justify-center h-12 w-12 bg-gray-800 rounded-full mt-2 mb-2 text-black shadow-lg mx-auto hover:shadow-sm hover:bg-channelBgDark transition duration-300 ease-in-out cursor-pointer;
+    @apply flex items-center justify-center 
+    h-12 w-12 
+    bg-gray-800 text-black
+    rounded-full shadow-lg 
+    mt-2 mb-2 mx-auto 
+    hover:shadow-sm hover:bg-channelBgDark 
+    transition duration-300 ease-in-out 
+    cursor-pointer;
   }
 
   .sidebar-hr {
-    @apply bg-gray-800 border border-gray-800 rounded-full mx-2;
+    @apply bg-gray-800 
+    border border-gray-800 rounded-full 
+    mx-2;
   }
 
   .top-navigation {
-    @apply flex flex-row items-center justify-evenly bg-navbarDark bg-opacity-90 w-full h-16 m-0 shadow-lg;
+    @apply flex flex-row items-center justify-evenly 
+    bg-navbarDark bg-opacity-90 
+    w-full h-16 
+    m-0 
+    shadow-lg;
   }
 
   .title-hashtag {
-    @apply text-lg tracking-wider font-semibold text-gray-500 ml-2 my-auto;
+    @apply text-lg tracking-wider font-semibold text-gray-500 
+    ml-2 my-auto;
   }
 
   .title-text {
-    @apply text-xl text-accent tracking-wider font-semibold text-opacity-80 mr-auto ml-2 my-auto transition duration-300 ease-in-out;
+    @apply text-xl text-accent tracking-wider font-semibold text-opacity-80 
+    mr-auto ml-2 my-auto 
+    transition duration-300 ease-in-out;
   }
 
   .search {
-    @apply w-1/5 flex items-center justify-start bg-bottomBar px-2 h-9 ml-0 mr-0 rounded-md transition duration-300 ease-in-out shadow-xl;
+    @apply w-1/5 flex items-center justify-start 
+    bg-bottomBar 
+    px-2 h-9 ml-0 mr-0 
+    rounded-md shadow-xl
+    transition duration-300 ease-in-out;
   }
 
   .search-input {
-    @apply text-lg w-full font-sans bg-transparent outline-none text-secondary pl-1 rounded placeholder-gray-600;
+    @apply text-lg w-full font-sans 
+    bg-transparent outline-none 
+    text-secondary placeholder-gray-600
+    pl-1 rounded;
   }
 
   .content-container {
-    @apply flex flex-col bg-contentDark m-0 h-full w-full overflow-hidden;
+    @apply flex flex-col 
+    bg-contentDark 
+    m-0 
+    h-full w-full 
+    overflow-hidden;
   }
 
   .content-list {
-    @apply flex flex-col items-center h-full w-full mt-0 ml-0 mx-auto px-6 pb-12 overflow-y-scroll;
+    @apply flex flex-col items-center 
+    h-full w-full 
+    mt-0 ml-0 mx-auto px-6 pb-12 
+    overflow-y-scroll;
   }
 
   .post {
-    @apply flex flex-row items-center justify-evenly p-2 mx-0 w-full my-2;
+    @apply flex flex-row items-center justify-evenly
+    p-2 mx-0 my-2
+    w-full;
   }
 
   .post-content {
-    @apply w-4/5 flex flex-col justify-start ml-2 mr-auto;
+    @apply w-4/5 flex flex-col justify-start 
+    ml-2 mr-auto;
   }
 
   .post-text {
@@ -82,11 +108,18 @@
   }
 
   .avatar-wrapper {
-    @apply flex flex-col items-center m-0 w-12 mb-auto;
+    @apply flex flex-col items-center
+    w-12 
+    m-0 mb-auto;
   }
 
   .avatar {
-    @apply flex-none w-12 h-full rounded-full object-cover bg-gray-100 mb-auto mt-0 mx-0 shadow-lg cursor-pointer;
+    @apply flex-none
+    w-12 h-full 
+    rounded-full shadow-lg
+    object-cover bg-gray-100 
+    mb-auto mt-0 mx-0 
+    cursor-pointer;
   }
 
   .timestamp {
@@ -94,27 +127,44 @@
   }
 
   .bottom-bar {
-    @apply flex flex-row items-center justify-between fixed left-96 right-16 bottom-2 rounded-lg h-12 shadow-lg bg-bottomBar px-2;
+    @apply flex flex-row items-center justify-between 
+    fixed left-96 right-16 bottom-2 
+    rounded-lg shadow-lg 
+    bg-bottomBar px-2
+    h-12;
   }
 
   .bottom-bar-input {
-    @apply mr-auto w-full bg-transparent outline-none ml-0 text-gray-400 text-lg placeholder-gray-500 cursor-pointer;
+    @apply mr-auto
+    w-full 
+    bg-transparent outline-none 
+    ml-0 
+    text-gray-400 text-lg placeholder-gray-500
+    cursor-pointer;
   }
 
   .channel-bar {
-    @apply bg-channelBgDark w-80 h-auto border-l border-gray-800 m-0 ml-16 overflow-hidden shadow;
+    @apply bg-channelBgDark 
+    w-80 h-auto 
+    border-l border-gray-800 shadow
+    m-0 ml-16 overflow-hidden;
   }
 
   .channel-container {
-    @apply flex flex-col items-center justify-start p-1 m-0;
+    @apply flex flex-col items-center justify-start 
+    p-1 m-0;
   }
 
   .channel-block {
-    @apply flex items-center justify-center h-16 m-0 p-0;
+    @apply flex items-center justify-center 
+    h-16 
+    m-0 p-0;
   }
 
   .channel-block-text {
-    @apply text-lg tracking-wider font-semibold text-gray-400 mr-auto ml-4 my-auto align-middle;
+    @apply text-lg tracking-wider font-semibold 
+    text-gray-400 
+    mr-auto ml-4 my-auto align-middle;
   }
 
   .dropdown {
@@ -130,14 +180,34 @@
   }
 
   .dropdown-selection {
-    @apply flex flex-row items-center justify-evenly mt-1 mr-auto ml-2 cursor-pointer;
+    @apply flex flex-row items-center justify-evenly
+    mt-1 mr-auto ml-2 
+    cursor-pointer;
   }
 
   .dropdown-selected-badge {
-    @apply flex flex-row items-center bg-gray-800 rounded-full pl-1 pr-2 mr-auto shadow-lg;
+    @apply flex flex-row items-center 
+    bg-gray-800 
+    rounded-full shadow-lg
+    pl-1 pr-2 mr-auto;
   }
 
   .dropdown-selection-text {
-    @apply text-secondary text-lg font-semibold tracking-wide mr-auto transition duration-300 ease-in-out hover:text-accent cursor-pointer;
+    @apply text-secondary text-lg font-semibold tracking-wide
+    mr-auto 
+    transition duration-300 ease-in-out 
+    hover:text-accent cursor-pointer;
   }
+}
+
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  box-shadow: 0px 0px 10px #131313aa;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #51e1ac;
+  border-radius: 12px;
 }

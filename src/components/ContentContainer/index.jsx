@@ -72,10 +72,11 @@ const BottomBar = () => (
 );
 
 const Post = ({ name, timestamp, text }) => {
+  const seed = Math.round(Math.random() * 100);
   return (
     <div className='post'>
       <div className='avatar-wrapper'>
-        <img src='https://i.pravatar.cc/75' alt='' className='avatar' />
+        <img src={`https://i.pravatar.cc/75/${seed}`} alt='' className='avatar' />
       </div>
 
       <div className='post-content'>

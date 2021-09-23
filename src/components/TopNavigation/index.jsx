@@ -31,25 +31,25 @@ const Search = () => (
 const BellIcon = () => (
   <FaRegBell
     size='24'
-    className='cursor-pointer text-grayIcon hover:text-primary ml-auto mr-4 shadow-lg transition duration-300 ease-in-out'
+    className='text-grayIcon ml-auto mr-4 shadow-lg transition duration-300 ease-in-out hover:text-primary cursor-pointer'
   />
 );
 const InboxIcon = () => (
   <FaInbox
     size='24'
-    className='hover:rotate-6 cursor-pointer text-grayIcon hover:text-primary mx-4 shadow-lg transition duration-300 ease-in-out'
+    className='text-grayIcon mx-4 shadow-lg transition duration-300 ease-in-out hover:rotate-6 hover:text-primary cursor-pointer'
   />
 );
 const QuestionIcon = () => (
   <FaQuestionCircle
     size='24'
-    className='cursor-pointer text-grayIcon hover:text-primary mx-4 shadow-lg transition duration-300 ease-in-out'
+    className='text-grayIcon mx-4 shadow-lg transition duration-300 ease-in-out hover:text-primary cursor-pointer'
   />
 );
 const UserCircle = () => (
   <FaUserCircle
     size='24'
-    className='cursor-pointer text-grayIcon hover:text-primary mx-4 shadow-lg transition duration-300 ease-in-out'
+    className='text-grayIcon mx-4 shadow-lg transition duration-300 ease-in-out hover:text-primary cursor-pointer'
   />
 );
 export default TopNavigation;

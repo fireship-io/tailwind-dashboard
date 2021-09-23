@@ -1,6 +1,5 @@
 import { BsPlus, BsFillLightningFill, BsGearFill } from 'react-icons/bs';
 import { FaPooStorm } from 'react-icons/fa';
-import SideBarIcon from './SideBarIcon';
 
 const SideBar = () => {
   return (
@@ -23,6 +22,10 @@ const SideBar = () => {
       </div>
     </div>
   );
+};
+
+const SideBarIcon = ({ icon }) => {
+  return <div className='sidebar-icon'>{icon}</div>;
 };
 
 const Divider = () => <hr className='sidebar-hr' />;
