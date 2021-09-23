@@ -10,9 +10,15 @@
 
 - [ ] Add a custom font
 
-Current preview: 
+Current preview:
 
-![Screen Shot 2021-09-23 at 12 08 01 PM](https://user-images.githubusercontent.com/58617435/134544856-79234dd5-103b-4387-ba6a-302754ffa83c.png)
+#### Dark mode
+
+![Screen Shot 2021-09-23 at 4 46 00 PM](https://user-images.githubusercontent.com/58617435/134584963-794c34bb-ec0b-4c4c-b7fb-89e7122ea350.png)
+
+#### Light mode
+
+(coming soon)
 
 ### Goal: Design a dashboard with Tailwind that’s loosely inspired by Discord
 
