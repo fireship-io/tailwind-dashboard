@@ -19,3 +19,21 @@
 - Must have light/dark mode.
 
 - Create components for anything reusable, i.e`<Button color=”purple” >`
+
+### TODO:
+
+- [ ] Add theme mode toggle icon/logic
+
+- [ ] Add responsiveness for small screens
+
+- [ ] Add better dummy data
+
+- [ ] Add some animations
+
+- [ ] Add a custom font
+
+- [ ] Customize/tweak neutrals
+
+- [ ] Break the component tree down
+
+- [ ] Clean up components and styles
