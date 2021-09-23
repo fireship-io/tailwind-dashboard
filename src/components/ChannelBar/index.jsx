@@ -25,8 +25,8 @@ const ChannelBar = () => {
 
 const ChannelBlock = () => (
   <div className='channel-block'>
-    <h5 className='channel-block-text'>Tailwind CSS</h5>
-    <FaChevronDown size='18' className='text-secondary ml-4 mr-4 my-auto' />
+    <h5 className='channel-block-text'>Tailwind & React</h5>
+    <FaChevronDown size='12' className='text-secondary ml-4 mr-4 my-auto' />
   </div>
 );
 

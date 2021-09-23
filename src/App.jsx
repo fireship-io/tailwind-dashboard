@@ -4,7 +4,7 @@ import SideBar from './components/SideBar';
 
 function App() {
   return (
-    <div className='flex flex-row bg-gradient-to-r from-green-400 via-purple-500 to-pink-400 h-screen w-screen'>
+    <div className='app'>
       <SideBar />
       <Channelbar />
       <ContentContainer />

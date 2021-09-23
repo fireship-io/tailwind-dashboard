@@ -8,10 +8,18 @@ const SideBar = () => {
       <div className='mx-auto mb-auto'>
         <SideBarIcon icon={<FaPooStorm size='28' className='text-primary' />} />
         <Divider />
-        <SideBarIcon icon={<BsPlus size='32' className='text-accent' />} />
-        <SideBarIcon icon={<BsFillLightningFill size='20' className='text-accent' />} />
+        <SideBarIcon
+          icon={<BsPlus size='32' className='text-secondary hover:text-accent' />}
+        />
+        <SideBarIcon
+          icon={
+            <BsFillLightningFill size='20' className='text-secondary hover:text-accent' />
+          }
+        />
         <Divider />
-        <SideBarIcon icon={<BsGearFill size='22' className='text-secondary' />} />
+        <SideBarIcon
+          icon={<BsGearFill size='22' className='text-secondary hover:text-primary' />}
+        />
       </div>
     </div>
   );

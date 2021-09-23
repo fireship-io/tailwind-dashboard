@@ -67,7 +67,7 @@ const ContentContainer = () => {
 const BottomBar = () => (
   <div className='bottom-bar'>
     <PlusIcon />
-    <input type='text' className='bottom-bar-input' />
+    <input type='text' placeholder='Enter message...' className='bottom-bar-input' />
   </div>
 );
 
