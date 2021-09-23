@@ -26,7 +26,7 @@
 
 - [ ] Add responsiveness for small screens
 
-- [ ] Add better dummy data
+- [x] Add better dummy data
 
 - [ ] Add some animations
 
@@ -34,6 +34,6 @@
 
 - [ ] Customize/tweak neutrals
 
-- [ ] Break the component tree down
+- [x] Break the component tree down
 
-- [ ] Clean up components and styles
+- [x] Clean up components and styles

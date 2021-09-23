@@ -4,7 +4,7 @@ import SideBarIcon from './SideBarIcon';
 
 const SideBar = () => {
   return (
-    <div className=' flex flex-column mt-0 h-screen w-16 mx-0 fixed top-0 left-0 items-start justify-center shadow-lg'>
+    <div className='sidebar'>
       <div className='mx-auto'>
         <SideBarIcon icon={<FaPooStorm size='28' className='text-primary' />} />
         <Divider />
@@ -17,6 +17,6 @@ const SideBar = () => {
   );
 };
 
-const Divider = () => <hr className='border rounded-full border-gray-900 mx-3' />;
+const Divider = () => <hr className='sidebar-hr' />;
 
 export default SideBar;
