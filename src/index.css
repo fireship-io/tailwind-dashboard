@@ -98,7 +98,7 @@
   }
 
   .bottom-bar-input {
-    @apply mr-auto w-full bg-transparent outline-none ml-0 text-gray-400 text-lg placeholder-gray-500cursor-pointer;
+    @apply mr-auto w-full bg-transparent outline-none ml-0 text-gray-400 text-lg placeholder-gray-500 cursor-pointer;
   }
 
   .channel-bar {
