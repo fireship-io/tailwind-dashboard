@@ -1,59 +1,64 @@
+import { useState } from 'react';
 import { BsHash } from 'react-icons/bs';
-import { FaChevronDown, FaPlus } from 'react-icons/fa';
+import { FaChevronDown, FaChevronRight, FaPlus } from 'react-icons/fa';
+
+const topics = ['tailwind-css', 'react'];
+const questions = ['jit-compilation', 'purge-files', 'dark-mode'];
+const random = ['variants', 'plugins'];
 
 const ChannelBar = () => {
   return (
-    <div className='channel-bar'>
+    <div className='channel-bar shadow-lg'>
       <ChannelBlock />
       <div className='channel-container'>
-        <Dropdown
-          header='Topics'
-          isSelected={true}
-          selection1='tailwind-css'
-          selection2='react'
-        />
-        <Dropdown
-          header='Questions'
-          selection1='jit-compilation'
-          selection2='purge-files'
-        />
-        <Dropdown header='Random' selection1='variants' selection2='plugins' />
+        <Dropdown header='Topics' selections={topics} />
+        <Dropdown header='Questions' selections={questions} />
+        <Dropdown header='Random' selections={random} />
       </div>
     </div>
   );
 };
 
-const ChannelBlock = () => (
-  <div className='channel-block'>
-    <h5 className='channel-block-text'>Tailwind & React</h5>
-    <FaChevronDown size='12' className='text-secondary ml-4 mr-4 my-auto' />
+const Dropdown = ({ header, selections }) => {
+  const [expanded, setExpanded] = useState(true);
+
+  return (
+    <div className='dropdown'>
+      <div onClick={() => setExpanded(!expanded)} className='dropdown-header'>
+        <ChevronIcon expanded={expanded} />
+        <h5
+          className={expanded ? 'dropdown-header-text-selected' : 'dropdown-header-text'}
+        >
+          {header}
+        </h5>
+        <FaPlus size='12' className='text-accent text-opacity-80 my-auto ml-auto' />
+      </div>
+      {expanded &&
+        selections &&
+        selections.map((selection) => <TopicSelection selection={selection} />)}
+    </div>
+  );
+};
+
+const ChevronIcon = ({ expanded }) => {
+  const chevClass = 'text-accent text-opacity-80 my-auto mr-1';
+  return expanded ? (
+    <FaChevronDown size='14' className={chevClass} />
+  ) : (
+    <FaChevronRight size='14' className={chevClass} />
+  );
+};
+
+const TopicSelection = ({ selection }) => (
+  <div className='dropdown-selection'>
+    <BsHash size='24' className='text-gray-400' />
+    <h5 className='dropdown-selection-text'>{selection}</h5>
   </div>
 );
 
-const Dropdown = ({ header, isSelected, selection1, selection2 }) => (
-  <div className='dropdown'>
-    <div className='dropdown-header '>
-      <FaChevronDown size='12' className='text-accent text-opacity-80 my-auto mr-1' />
-      <h5 className='dropdown-header-text'>{header}</h5>
-      <FaPlus size='16' className='text-accent text-opacity-80 my-auto ml-auto' />
-    </div>
-    {isSelected ? (
-      <div className='dropdown-selection'>
-        <div className='dropdown-selected-badge'>
-          <BsHash size='24' className=' text-gray-400' />
-          <h5 className='dropdown-selection-text'>{selection1}</h5>
-        </div>
-      </div>
-    ) : (
-      <div className='dropdown-selection'>
-        <BsHash size='24' className=' text-gray-400' />
-        <h5 className='dropdown-selection-text'>{selection1}</h5>
-      </div>
-    )}
-    <div className='dropdown-selection'>
-      <BsHash size='24' className='text-gray-400' />
-      <h5 className='dropdown-selection-text'>{selection2}</h5>
-    </div>
+const ChannelBlock = () => (
+  <div className='channel-block'>
+    <h5 className='channel-block-text'>Channels</h5>
   </div>
 );
 

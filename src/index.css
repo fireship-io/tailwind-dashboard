@@ -25,26 +25,42 @@
   .sidebar-icon {
     @apply flex items-center justify-center 
     h-12 w-12 
-    bg-gray-800 text-black
+    text-gray-700 hover:text-primary
+    bg-gray-200  hover:bg-gray-700 
+    dark:text-secondary dark:hover:text-primary
+    dark:bg-gray-800 dark:hover:bg-gray-800
     rounded-full shadow-lg 
     mt-2 mb-2 mx-auto 
-    hover:shadow-sm hover:bg-channelBgDark 
+    hover:shadow-none
     transition duration-300 ease-in-out 
     cursor-pointer;
   }
 
   .sidebar-hr {
-    @apply bg-gray-800 
-    border border-gray-800 rounded-full 
+    @apply bg-gray-500 dark:bg-gray-800 
+    border border-gray-500 dark:border-gray-800 rounded-full 
     mx-2;
   }
 
   .top-navigation {
     @apply flex flex-row items-center justify-evenly 
-    bg-navbarDark bg-opacity-90 
+    bg-navbarLight dark:bg-navbarDark bg-opacity-90 
     w-full h-16 
     m-0 
     shadow-lg;
+  }
+
+  .top-navigation-icon {
+    @apply text-grayIcon 
+    mr-3 ml-4
+    dark:shadow-md 
+    transition duration-300 ease-in-out 
+    hover:text-pink-400 
+    cursor-pointer;
+  }
+
+  .top-navigation-icon:first {
+    @apply ml-auto mr-4;
   }
 
   .title-hashtag {
@@ -53,29 +69,29 @@
   }
 
   .title-text {
-    @apply text-xl text-accent tracking-wider font-semibold text-opacity-80 
+    @apply text-xl text-pink-500 dark:text-accent tracking-wider font-semibold text-opacity-80 
     mr-auto ml-2 my-auto 
     transition duration-300 ease-in-out;
   }
 
   .search {
     @apply w-1/5 flex items-center justify-start 
-    bg-bottomBar 
+    bg-bottomBarLight dark:bg-bottomBarDark
     px-2 h-9 ml-0 mr-0 
-    rounded-md shadow-xl
+    rounded-md shadow-md
     transition duration-300 ease-in-out;
   }
 
   .search-input {
-    @apply text-lg w-full font-sans 
+    @apply w-full font-sans font-semibold
     bg-transparent outline-none 
-    text-secondary placeholder-gray-600
+    text-secondary placeholder-gray-400
     pl-1 rounded;
   }
 
   .content-container {
     @apply flex flex-col 
-    bg-contentDark 
+    bg-contentLight dark:bg-contentDark 
     m-0 
     h-full w-full 
     overflow-hidden;
@@ -84,69 +100,78 @@
   .content-list {
     @apply flex flex-col items-center 
     h-full w-full 
-    mt-0 ml-0 mx-auto px-6 pb-12 
+    mt-0 ml-0 mx-auto px-0 pb-12 
     overflow-y-scroll;
   }
 
   .post {
-    @apply flex flex-row items-center justify-evenly
-    p-2 mx-0 my-2
-    w-full;
+    @apply w-full
+    flex flex-row items-center justify-evenly
+    py-4 px-8 m-0
+    cursor-pointer;
+  }
+
+  .post-selected {
+    @apply bg-green-400 dark:bg-gray-900
+    shadow-md;
   }
 
   .post-content {
-    @apply w-4/5 flex flex-col justify-start 
-    ml-2 mr-auto;
+    @apply w-4/5 
+    flex flex-col justify-start 
+    ml-auto;
   }
 
   .post-text {
-    @apply text-lg text-left text-secondary mr-auto whitespace-normal;
+    @apply text-lg text-left text-secondary 
+    mr-auto 
+    whitespace-normal;
   }
 
   .post-owner {
-    @apply text-left font-semibold text-primary mr-2 cursor-pointer;
+    @apply text-left font-semibold text-gray-800 dark:text-primary mr-2 cursor-pointer;
   }
 
   .avatar-wrapper {
     @apply flex flex-col items-center
     w-12 
-    m-0 mb-auto;
+    m-0 ml-auto mb-auto;
   }
 
   .avatar {
     @apply flex-none
     w-12 h-full 
-    rounded-full shadow-lg
+    rounded-full shadow-md
     object-cover bg-gray-100 
     mb-auto mt-0 mx-0 
     cursor-pointer;
   }
 
   .timestamp {
-    @apply text-xs text-left font-semibold text-gray-600 ml-2;
+    @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-600 ml-2;
   }
 
   .bottom-bar {
     @apply flex flex-row items-center justify-between 
-    fixed left-96 right-16 bottom-2 
+    fixed left-88 right-8 bottom-2 
     rounded-lg shadow-lg 
-    bg-bottomBar px-2
+    bg-bottomBarLight dark:bg-bottomBarDark px-2
     h-12;
   }
 
   .bottom-bar-input {
-    @apply mr-auto
+    @apply font-semibold
     w-full 
     bg-transparent outline-none 
-    ml-0 
-    text-gray-400 text-lg placeholder-gray-500
-    cursor-pointer;
+    ml-0 mr-auto
+    text-secondary dark:text-gray-400 placeholder-gray-400
+    cursor-text;
   }
 
   .channel-bar {
-    @apply bg-channelBgDark 
+    @apply bg-channelBgLight dark:bg-channelBgDark 
     w-80 h-auto 
-    border-l border-gray-800 shadow
+    border-l border-gray-800 shadow-xl
     m-0 ml-16 overflow-hidden;
   }
 
@@ -162,41 +187,45 @@
   }
 
   .channel-block-text {
-    @apply text-lg tracking-wider font-semibold 
-    text-gray-400 
+    @apply text-lg tracking-wider font-bold 
+    text-secondary dark:text-gray-400 
     mr-auto ml-4 my-auto align-middle;
   }
 
   .dropdown {
-    @apply m-0 w-full px-2 pb-2;
+    @apply m-0 w-full px-2 pb-2
+    transition duration-300 ease-in-out;
   }
 
   .dropdown-header {
-    @apply flex flex-row items-center justify-evenly mx-0;
+    @apply flex flex-row items-center justify-evenly
+    mx-0
+    cursor-pointer;
   }
 
   .dropdown-header-text {
-    @apply text-accent text-opacity-90 font-semibold;
+    @apply text-secondary text-opacity-90 
+    text-lg font-semibold
+    cursor-default;
+  }
+
+  .dropdown-header-text-selected {
+    @apply text-pink-500 dark:text-accent text-opacity-90 text-lg font-bold;
   }
 
   .dropdown-selection {
     @apply flex flex-row items-center justify-evenly
-    mt-1 mr-auto ml-2 
+    mt-1 mr-auto ml-2
+    transition duration-300 ease-in-out
     cursor-pointer;
   }
 
-  .dropdown-selected-badge {
-    @apply flex flex-row items-center 
-    bg-gray-800 
-    rounded-full shadow-lg
-    pl-1 pr-2 mr-auto;
-  }
-
   .dropdown-selection-text {
-    @apply text-secondary text-lg font-semibold tracking-wide
+    @apply text-secondary  font-semibold tracking-wide
     mr-auto 
     transition duration-300 ease-in-out 
-    hover:text-accent cursor-pointer;
+    hover:text-pink-500 dark:hover:text-accent
+    cursor-pointer;
   }
 }
 
@@ -208,6 +237,6 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #51e1ac;
-  border-radius: 12px;
+  border-radius: 2px;
+  @apply bg-gray-500 dark:bg-green-400;
 }

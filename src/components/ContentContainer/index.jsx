@@ -1,5 +1,6 @@
 import TopNavigation from '../TopNavigation';
 import { BsPlusCircleFill } from 'react-icons/bs';
+import { useState } from 'react';
 
 const ContentContainer = () => {
   return (
@@ -72,9 +73,14 @@ const BottomBar = () => (
 );
 
 const Post = ({ name, timestamp, text }) => {
+  const [selected, setSelected] = useState(false);
+
   const seed = Math.round(Math.random() * 100);
   return (
-    <div className='post'>
+    <div
+      onClick={() => setSelected(!selected)}
+      className={selected ? 'post post-selected' : 'post'}
+    >
       <div className='avatar-wrapper'>
         <img src={`https://i.pravatar.cc/75/${seed}`} alt='' className='avatar' />
       </div>
@@ -91,7 +97,10 @@ const Post = ({ name, timestamp, text }) => {
 };
 
 const PlusIcon = () => (
-  <BsPlusCircleFill size='22' className='shadow-lg mx-2 text-primary' />
+  <BsPlusCircleFill
+    size='22'
+    className='text-green-500 dark:shadow-lg mx-2 dark:text-primary'
+  />
 );
 
 export default ContentContainer;

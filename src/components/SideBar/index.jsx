@@ -5,29 +5,18 @@ const SideBar = () => {
   return (
     <div className='sidebar'>
       <div className='mx-auto mb-auto'>
-        <SideBarIcon icon={<FaPooStorm size='28' className='text-primary' />} />
+        <SideBarIcon icon={<FaPooStorm size='28' />} />
         <Divider />
-        <SideBarIcon
-          icon={<BsPlus size='32' className='text-secondary hover:text-accent' />}
-        />
-        <SideBarIcon
-          icon={
-            <BsFillLightningFill size='20' className='text-secondary hover:text-accent' />
-          }
-        />
+        <SideBarIcon icon={<BsPlus size='32' />} />
+        <SideBarIcon icon={<BsFillLightningFill size='20' />} />
         <Divider />
-        <SideBarIcon
-          icon={<BsGearFill size='22' className='text-secondary hover:text-primary' />}
-        />
+        <SideBarIcon icon={<BsGearFill size='22' />} />
       </div>
     </div>
   );
 };
 
-const SideBarIcon = ({ icon }) => {
-  return <div className='sidebar-icon'>{icon}</div>;
-};
-
+const SideBarIcon = ({ icon }) => <div className='sidebar-icon'>{icon}</div>;
 const Divider = () => <hr className='sidebar-hr' />;
 
 export default SideBar;
