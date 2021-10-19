@@ -10,50 +10,40 @@
 }
 
 @layer components {
-  .app {
-    @apply flex flex-row
-    bg-gradient-to-r from-green-400 via-purple-500 to-pink-400 
-    h-screen w-screen;
-  }
-
-  .sidebar {
-    @apply flex flex-col items-start justify-center 
-    fixed top-0 left-0 
-    h-screen w-16 m-0 shadow-lg;
-  }
-
   .sidebar-icon {
-    @apply flex items-center justify-center 
-    h-12 w-12 
-    text-gray-700 hover:text-primary
-    bg-gray-200  hover:bg-gray-700 
-    dark:text-secondary dark:hover:text-primary
-    dark:bg-gray-800 dark:hover:bg-gray-800
-    rounded-full shadow-lg 
-    mt-2 mb-2 mx-auto 
-    hover:shadow-none
-    transition duration-300 ease-in-out 
-    cursor-pointer;
+    @apply relative flex items-center justify-center 
+    h-12 w-12 mt-2 mb-2 mx-auto  
+  bg-gray-400 hover:bg-green-600 dark:bg-gray-800 
+  text-green-500 hover:text-white
+    hover:rounded-xl rounded-3xl
+    transition-all duration-300 ease-linear
+    cursor-pointer shadow-lg ;
+  }
+
+  .sidebar-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
+    text-white bg-gray-900 
+    text-xs font-bold 
+    transition-all duration-100 scale-0 origin-left;
   }
 
   .sidebar-hr {
-    @apply bg-gray-500 dark:bg-gray-800 
-    border border-gray-500 dark:border-gray-800 rounded-full 
+    @apply bg-gray-200 dark:bg-gray-800 
+    border border-gray-200 dark:border-gray-800 rounded-full
     mx-2;
   }
 
   .top-navigation {
     @apply flex flex-row items-center justify-evenly 
-    bg-navbarLight dark:bg-navbarDark bg-opacity-90 
+    bg-gray-300 dark:bg-gray-700 bg-opacity-90 
     w-full h-16 
     m-0 
     shadow-lg;
   }
 
   .top-navigation-icon {
-    @apply text-grayIcon 
+    @apply text-gray-500
     mr-3 ml-4
-    dark:shadow-md 
     transition duration-300 ease-in-out 
     hover:text-pink-400 
     cursor-pointer;
@@ -69,14 +59,15 @@
   }
 
   .title-text {
-    @apply text-xl text-pink-500 dark:text-accent tracking-wider font-semibold text-opacity-80 
+    @apply text-xl text-gray-500 tracking-wider font-semibold text-opacity-80 
     mr-auto ml-2 my-auto 
     transition duration-300 ease-in-out;
   }
 
   .search {
     @apply w-1/5 flex items-center justify-start 
-    bg-bottomBarLight dark:bg-bottomBarDark
+    bg-gray-400 dark:bg-gray-600
+    text-gray-500
     px-2 h-9 ml-0 mr-0 
     rounded-md shadow-md
     transition duration-300 ease-in-out;
@@ -85,13 +76,13 @@
   .search-input {
     @apply w-full font-sans font-semibold
     bg-transparent outline-none 
-    text-secondary placeholder-gray-400
+    text-gray-500  placeholder-gray-500
     pl-1 rounded;
   }
 
   .content-container {
     @apply flex flex-col 
-    bg-contentLight dark:bg-contentDark 
+    bg-gray-300 dark:bg-gray-700
     m-0 
     h-full w-full 
     overflow-hidden;
@@ -123,13 +114,12 @@
   }
 
   .post-text {
-    @apply text-lg text-left text-secondary 
-    mr-auto 
-    whitespace-normal;
+    @apply text-lg text-left text-gray-800 dark:text-white 
+    mr-auto whitespace-normal;
   }
 
   .post-owner {
-    @apply text-left font-semibold text-gray-800 dark:text-primary mr-2 cursor-pointer;
+    @apply text-left font-semibold text-gray-800 dark:text-white mr-2 cursor-pointer;
   }
 
   .avatar-wrapper {
@@ -155,24 +145,21 @@
     @apply flex flex-row items-center justify-between 
     fixed left-88 right-8 bottom-2 
     rounded-lg shadow-lg 
-    bg-bottomBarLight dark:bg-bottomBarDark px-2
+    bg-gray-400 dark:bg-gray-600 px-2
     h-12;
   }
 
   .bottom-bar-input {
-    @apply font-semibold
-    w-full 
+    @apply font-semibold w-full
     bg-transparent outline-none 
     ml-0 mr-auto
-    text-secondary dark:text-gray-400 placeholder-gray-400
+    text-gray-500  dark:text-gray-400 placeholder-gray-500
     cursor-text;
   }
 
   .channel-bar {
-    @apply bg-channelBgLight dark:bg-channelBgDark 
-    w-80 h-auto 
-    border-l border-gray-800 shadow-xl
-    m-0 ml-16 overflow-hidden;
+    @apply w-80 h-auto m-0 ml-16 bg-gray-200 dark:bg-gray-800
+     overflow-hidden;
   }
 
   .channel-container {
@@ -188,7 +175,7 @@
 
   .channel-block-text {
     @apply text-lg tracking-wider font-bold 
-    text-secondary dark:text-gray-400 
+    text-gray-600 dark:text-gray-400 
     mr-auto ml-4 my-auto align-middle;
   }
 
@@ -199,18 +186,18 @@
 
   .dropdown-header {
     @apply flex flex-row items-center justify-evenly
-    mx-0
+    mx-0 text-gray-500
     cursor-pointer;
   }
 
   .dropdown-header-text {
-    @apply text-secondary text-opacity-90 
+    @apply text-gray-500  text-opacity-90 
     text-lg font-semibold
     cursor-default;
   }
 
   .dropdown-header-text-selected {
-    @apply text-pink-500 dark:text-accent text-opacity-90 text-lg font-bold;
+    @apply text-blue-500 text-opacity-90 text-lg font-bold;
   }
 
   .dropdown-selection {
@@ -221,10 +208,10 @@
   }
 
   .dropdown-selection-text {
-    @apply text-secondary  font-semibold tracking-wide
+    @apply text-gray-500 font-semibold tracking-wide
     mr-auto 
     transition duration-300 ease-in-out 
-    hover:text-pink-500 dark:hover:text-accent
+    hover:text-pink-500 dark:hover:text-gray-500
     cursor-pointer;
   }
 }
@@ -233,10 +220,8 @@
 
 ::-webkit-scrollbar {
   background-color: transparent;
-  box-shadow: 0px 0px 10px #131313aa;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 2px;
   @apply bg-gray-500 dark:bg-green-400;
 }

@@ -73,16 +73,12 @@ const BottomBar = () => (
 );
 
 const Post = ({ name, timestamp, text }) => {
-  const [selected, setSelected] = useState(false);
 
   const seed = Math.round(Math.random() * 100);
   return (
-    <div
-      onClick={() => setSelected(!selected)}
-      className={selected ? 'post post-selected' : 'post'}
-    >
+    <div className={'post'}>
       <div className='avatar-wrapper'>
-        <img src={`https://i.pravatar.cc/75/${seed}`} alt='' className='avatar' />
+        <img src={`https://avatars.dicebear.com/api/open-peeps/${seed}.svg`} alt='' className='avatar' />
       </div>
 
       <div className='post-content'>

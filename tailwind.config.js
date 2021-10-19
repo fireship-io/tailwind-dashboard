@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   enabled: true,
   mode: 'jit',
@@ -6,18 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#51e1ac',
-        accent: '#ff73bb',
-        secondary: '#536178',
-        grayIcon: '#5c6167',
-        channelBgDark: '#1c2332',
-        contentDark: '#21273a',
-        navbarDark: '#22283c',
-        bottomBarDark: '#343a46',
-        channelBgLight: '#d9e2f9',
-        contentLight: '#cdd6f0',
-        navbarLight: '#d9e2f9',
-        bottomBarLight: '#dae3f6',
+        gray: {
+          900: '#202225',
+          800: '#2f3136',
+          700: '#36393f',
+          600: '#4f545c',
+          400: '#d4d7dc',
+          300: '#e3e5e8',
+          200: '#ebedef',
+          100: '#f2f3f5',
+        },
       },
       spacing: {
         88: '22rem',
