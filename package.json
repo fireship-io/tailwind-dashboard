@@ -9,7 +9,7 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
-    "start": "react scripts  start",
+    "start": "react-scripts start",
     "build": "react scripts  build",
     "test": "react scripts test",
     "eject": "react-scripts eject"
@@ -34,6 +34,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.4",
     "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.23",
+    "tailwindcss": "^3.0.23"
   }
 }
