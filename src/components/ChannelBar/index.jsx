@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BsHash } from 'react-icons/bs';
-import { FaChevronDown, FaChevronRight, FaPlus } from 'react-icons/fa';
+import { FaChevronDown, FaChevronRight, FaMinus, FaPlus } from 'react-icons/fa';
 
 const topics = ['tailwind-css', 'react'];
 const questions = ['jit-compilation', 'purge-files', 'dark-mode'];
@@ -11,7 +11,7 @@ const ChannelBar = () => {
     <div className='channel-bar shadow-lg'>
       <ChannelBlock />
       <div className='channel-container'>
-        <Dropdown header='Topics' selections={topics} />
+        <Dropdown header='Topics' selections={topics} onClick />
         <Dropdown header='Questions' selections={questions} />
         <Dropdown header='Random' selections={random} />
       </div>
@@ -21,17 +21,24 @@ const ChannelBar = () => {
 
 const Dropdown = ({ header, selections }) => {
   const [expanded, setExpanded] = useState(true);
+  const [collapse, setCollapse] = useState(false);
+
+  const handleClick = () => {
+    setExpanded(!expanded);
+    setCollapse(!collapse);
+
+  };
 
   return (
     <div className='dropdown'>
-      <div onClick={() => setExpanded(!expanded)} className='dropdown-header'>
+      <div onClick={handleClick} className='dropdown-header'>
         <ChevronIcon expanded={expanded} />
         <h5
           className={expanded ? 'dropdown-header-text-selected' : 'dropdown-header-text'}
         >
           {header}
         </h5>
-        <FaPlus size='12' className='text-accent text-opacity-80 my-auto ml-auto' />
+       <CollapseIcons collapse={collapse} />
       </div>
       {expanded &&
         selections &&
@@ -61,5 +68,11 @@ const ChannelBlock = () => (
     <h5 className='channel-block-text'>Channels</h5>
   </div>
 );
+
+const CollapseIcons = ({collapse}) => {
+  return( collapse ?  <FaPlus size='12' className='text-accent text-opacity-80 my-auto ml-auto' collapse={collapse} /> : 
+  <FaMinus size='12' className='text-accent text-opacity-80 my-auto ml-auto' collapse={collapse} />
+  )
+}
 
 export default ChannelBar;
